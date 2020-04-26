@@ -48,3 +48,8 @@
   border: solid 1px #ddd;
   background: #61dafb;
 }
+
+.border {
+  padding: 5px;
+  border: solid 1px #61dafb;
+}

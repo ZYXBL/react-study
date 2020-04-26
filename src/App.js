@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import HooksPage from './pages/HooksPage';
+// import HooksPage from './pages/HooksPage';
+import ReactReduxPage from './pages/ReactReduxPage';
 
 // import ContextPage from './pages/ContextPage';
 // import HocPage from './pages/HocPage';
@@ -20,40 +21,41 @@ function App() {
       {/* <HocPage /> */}
       {/* <ModalPage /> */}
       {/* <ReduxPage /> */}
-      <HooksPage />
+      {/* <HooksPage /> */}
+      <ReactReduxPage />
     </div>
   );
 }
 
-const arr = [1, 2, 3, 4];
+// const arr = [1, 2, 3, 4];
 
-const reducer = (accumulator, currentValue) => accumulator + currentValue;
+// const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
-console.log(arr.reduce(reducer, 10));
+// console.log(arr.reduce(reducer, 10));
 
-function f1(arg) {
-  console.log('f1', arg);
-  return arg;
-}
-function f2(arg) {
-  console.log('f2', arg);
-  return arg;
-}
-function f3(arg) {
-  console.log('f3', arg);
-  return arg;
-}
+// function f1(arg) {
+//   console.log('f1', arg);
+//   return arg;
+// }
+// function f2(arg) {
+//   console.log('f2', arg);
+//   return arg;
+// }
+// function f3(arg) {
+//   console.log('f3', arg);
+//   return arg;
+// }
 
-function compose(...funs) {
-  if (funs.length === 0) {
-    return arg => arg
-  }
+// function compose(...funs) {
+//   if (funs.length === 0) {
+//     return arg => arg
+//   }
 
-  return funs.reduce((a, b) => (...args) => a(b(...args)))
-}
+//   return funs.reduce((a, b) => (...args) => a(b(...args)))
+// }
 
-let dispatch = compose(f1, f2, f3);
+// let dispatch = compose(f1, f2, f3);
 
-let res = dispatch('test');
-console.log('res:' + res);
+// let res = dispatch('test');
+// console.log('res:' + res);
 export default App;

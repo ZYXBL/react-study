@@ -1,8 +1,9 @@
+import { createStore, combineReducers } from "redux";
 // import { createStore, applyMiddleware, combineReducers } from "redux";
-import thunk from 'redux-thunk';
-import logger from 'redux-logger';
+// import thunk from 'redux-thunk';
+// import logger from 'redux-logger';
 // import { createStore, applyMiddleware, combineReducers } from "../kredux";
-import { createStore, applyMiddleware, combineReducers } from "../zredux";
+// import { createStore, applyMiddleware, combineReducers } from "../zredux";
 
 export const counterReducer = (state = 0, { type, payload = 1 }) => {
   switch (type) {
@@ -16,8 +17,9 @@ export const counterReducer = (state = 0, { type, payload = 1 }) => {
   }
 }
 
+const store = createStore(combineReducers({ count: counterReducer }));
 // const store = createStore(counterReducer, applyMiddleware(thunk, logger));
-const store = createStore(combineReducers({ home: counterReducer }), applyMiddleware(thunk, logger));
+// const store = createStore(combineReducers({ home: counterReducer }), applyMiddleware(thunk, logger));
 
 // function logger({ getState }) {
 //   return next => action => {

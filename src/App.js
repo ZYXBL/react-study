@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import HooksPage from './pages/HooksPage';
 
 // import ContextPage from './pages/ContextPage';
 // import HocPage from './pages/HocPage';
 // import ModalPage from './pages/ModalPage';
-import ReduxPage from './pages/ReduxPage';
+// import ReduxPage from './pages/ReduxPage';
 // import FormPage from './components/FormPage';
 // import MyRCFieldForm from './components/MyRCFieldForm';
 // import MyRCFieldClassForm from './components/MyRCFieldClassForm';
@@ -18,7 +19,8 @@ function App() {
       {/* <MyRCFieldClassForm></MyRCFieldClassForm> */}
       {/* <HocPage /> */}
       {/* <ModalPage /> */}
-      <ReduxPage />
+      {/* <ReduxPage /> */}
+      <HooksPage />
     </div>
   );
 }

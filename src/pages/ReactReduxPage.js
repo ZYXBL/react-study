@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+// import { connect } from 'react-redux';
+// import { bindActionCreators } from 'redux';
+import { bindActionCreators, connect } from '../kReactRedux';
 
 
 export default connect(
@@ -8,11 +9,12 @@ export default connect(
   ({ count }) => ({ count }),
   // mapDispatchToProps function | object
   // {
-  //   add: () => ({ type: 'ADD' })
-  // }
+  //   add: () => ({ type: 'ADD' }),
+  //   minus: () => ({ type: 'MINUS' })
+  // },
   dispatch => {
-    const add = () => dispatch({ type: 'ADD' });
-    const minus = () => dispatch({ type: 'MINUS' });
+    // const add = () => dispatch({ type: 'ADD' });
+    // const minus = () => dispatch({ type: 'MINUS' });
 
     let creators = {
       add: () => ({ type: 'ADD' }),

@@ -16,8 +16,24 @@ export const counterReducer = (state = 0, { type, payload = 1 }) => {
       return state;
   }
 }
+const initUser = {
+  isLogin: false,
+  username: ''
+}
+export const User = (state = initUser, { type }) => {
+  switch (type) {
+    case 'LOGIN_SUCCESS':
+      return { ...state, isLogin: true, username: 'test-login' };
 
-const store = createStore(combineReducers({ count: counterReducer }));
+    case 'LOGIN_OUT':
+      return { ...state, isLogin: false, username: '' };
+
+    default:
+      return state;
+  }
+}
+
+const store = createStore(combineReducers({ count: counterReducer, user: User }));
 // const store = createStore(counterReducer, applyMiddleware(thunk, logger));
 // const store = createStore(combineReducers({ home: counterReducer }), applyMiddleware(thunk, logger));
 

@@ -4,6 +4,7 @@ import HomePage from './HomePage';
 import LoginPage from './LoginPage';
 import UsersPage from './UsersPage';
 import _404Page from './_404Page';
+import PrivateRoute from '../components/PrivateRoute';
 
 class ReactRouterPage extends Component {
   state = {}
@@ -16,15 +17,18 @@ class ReactRouterPage extends Component {
           <Link to="/user">用户中心</Link>
           <Link to="/login">登陆</Link>
 
-          <Route exact path="/"
-            component={HomePage}
-            children={ChildrenCmp}
-            render={renderCmp} />
           <Switch>
             {/* 渲染顺序 children > component > render */}
-            <Route path="/user"
+            <Route exact path="/"
+              component={HomePage}
+              // children={ChildrenCmp}
+              render={renderCmp} />
+            <PrivateRoute path="/user"
               component={UsersPage}
               render={renderCmp} />
+            {/* <Route path="/user"
+              component={UsersPage}
+              render={renderCmp} /> */}
             <Route path="/login" component={LoginPage} />
             <Route component={_404Page} />
           </Switch>
@@ -34,11 +38,11 @@ class ReactRouterPage extends Component {
   }
 }
 
-function ChildrenCmp(props) {
-  console.log('children', props);
+// function ChildrenCmp(props) {
+//   console.log('children', props);
 
-  return <div>ChildrenCmp</div>
-}
+//   return <div>ChildrenCmp</div>
+// }
 
 function renderCmp(props) {
   console.log('render', props);

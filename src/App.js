@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 // import HooksPage from './pages/HooksPage';
 // import ReactReduxPage from './pages/ReactReduxPage';
-import ReactReduxHookPage from './pages/ReactReduxHookPage';
+// import ReactReduxHookPage from './pages/ReactReduxHookPage';
+import ReactRouterPage from './pages/ReactRouterPage';
 
 // import ContextPage from './pages/ContextPage';
 // import HocPage from './pages/HocPage';
@@ -24,7 +25,8 @@ function App() {
       {/* <ReduxPage /> */}
       {/* <HooksPage /> */}
       {/* <ReactReduxPage /> */}
-      <ReactReduxHookPage />
+      {/* <ReactReduxHookPage /> */}
+      <ReactRouterPage />
     </div>
   );
 }

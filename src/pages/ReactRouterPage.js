@@ -14,6 +14,7 @@ class ReactRouterPage extends Component {
         <h1>ReactRouterPage</h1>
         <Router>
           <Link to="/">首页</Link>
+          <Link to="/product/1223">商品</Link>
           <Link to="/user">用户中心</Link>
           <Link to="/login">登陆</Link>
 
@@ -23,6 +24,8 @@ class ReactRouterPage extends Component {
               component={HomePage}
               // children={ChildrenCmp}
               render={renderCmp} />
+            <Route path="/product/:id"
+              render={Product} />
             <PrivateRoute path="/user"
               component={UsersPage}
               render={renderCmp} />
@@ -48,6 +51,27 @@ function renderCmp(props) {
   console.log('render', props);
 
   return <div>renderCmp</div>
+}
+
+
+function Product({ match }) {
+  const { params: { id }, url } = match;
+  return (
+    <div>
+      <h1>Product - {id}</h1>
+      <Link to={url + '/detail'}>detail</Link>
+      <Route path={url + '/detail'} component={Detail} />
+    </div>
+  )
+}
+
+function Detail(props) {
+  console.log('detail', props)
+  return (
+    <div>
+      <h1>Detail</h1>
+    </div>
+  )
 }
 
 export default ReactRouterPage;
